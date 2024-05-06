@@ -300,7 +300,7 @@ export const food_list = [
   },
   {
     _id: "21",
-    name: "Garlic Mushroom ",
+    name: "Garlic Mushroom",
     image: food_21,
     price: 14,
     description:

@@ -33,6 +33,11 @@ hr {
   gap: 10px;
 }
 
+.cursor {
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
 /* .app {
   width: 80%;
   margin: auto;
