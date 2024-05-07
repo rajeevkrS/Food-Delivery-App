@@ -16,19 +16,19 @@ const registerUser = async (req, res) => {
     // check user already exists
     const exists = await userModel.findOne({ email });
     if (exists) {
-      return res.json({ success: false, message: "User already exists" });
+      return res.json({ success: false, message: "User already exists!" });
     }
 
     // validating email format & strong password
     if (!validator.isEmail(email)) {
-      return res.json({ success: false, message: "Please enter valid email" });
+      return res.json({ success: false, message: "Please enter valid email!" });
     }
 
     // check the password length greater than 6
     if (password.length < 6) {
       return res.json({
         success: false,
-        message: "Please enter a strong password ",
+        message: "Please enter a strong password!",
       });
     }
 
@@ -51,11 +51,34 @@ const registerUser = async (req, res) => {
     res.json({ success: true, token });
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: "Error" });
+    res.json({ success: false, message: "Error!" });
   }
 };
 
 // Login user
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // check if user exists with the entered email id
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.json({ success: false, message: "User doesn't exists!" });
+    }
+
+    // if entered email matched, then comparing using password from DB password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.json({ success: false, message: "Invalid credentials!" });
+    }
+
+    // if the password matches, then generating a token
+    const token = createToken(user._id);
+    res.json({ success: true, token });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
 
 export { loginUser, registerUser };
