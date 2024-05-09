@@ -9,7 +9,7 @@ const StoreContextProvider = ({ children }) => {
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 
-  const addToCart = (itemId) => {
+  const addToCart = async (itemId) => {
     // if the user adding for the first time in the cart.
     if (!cartItems[itemId]) {
       setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
@@ -18,10 +18,27 @@ const StoreContextProvider = ({ children }) => {
     else {
       setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     }
+
+    // when user logged in then token gets generated and when item added in the cart then product will be added in the cart data also.
+    if (token) {
+      await axios.post(
+        url + "/api/cart/add",
+        { itemId },
+        { headers: { token } }
+      );
+    }
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+
+    if (token) {
+      await axios.post(
+        url + "/api/cart/remove",
+        { itemId },
+        { headers: { token } }
+      );
+    }
   };
 
   // Logic to retun the cart total
@@ -44,13 +61,29 @@ const StoreContextProvider = ({ children }) => {
     setFoodList(response.data.data);
   };
 
+  // Load Cart Data fetches data from particular users data which displays the actual quantity has been added of every item.
+  const loadCartData = async (token) => {
+    const response = await axios.post(
+      url + "/api/cart/get",
+      {},
+      { headers: { token } }
+    );
+
+    // saving the cart data in cartItems variable
+    setCartItems(response.data.cartData);
+  };
+
   useEffect(() => {
     async function loadData() {
       await fetchFoodList(); // calling fetchFoodList() func.
 
-      // Saving the local storage data in the token state when we reload the webpage, so that when page gets reloaded the user cannot gets logged out automatically.
+      // Saving the local storage data in the token state when we reload the webpage, so that when page gets reloaded the user cannot gets logged out automatically and display added quantity of every items.
       if (localStorage.getItem("token")) {
+        // saving
         setToken(localStorage.getItem("token"));
+
+        // loading the func when getting the token from localStorage
+        await loadCartData(localStorage.getItem("token"));
       }
     }
     loadData();
