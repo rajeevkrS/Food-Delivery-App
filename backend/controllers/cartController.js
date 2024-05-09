@@ -6,7 +6,7 @@ const addToCart = async (req, res) => {
     // Finding the user
     // req.body.userId is getting from auth middleware
     // So while requesting we will not send the userId, we will send the token and auth middleware will convert the token in the userId
-    let userData = await userModel.findOne({ _id: req.body.userId });
+    let userData = await userModel.findById(req.body.userId);
 
     // Storing the user's cart data in cart data variable.
     let cartData = await userData.cartData;
@@ -30,7 +30,22 @@ const addToCart = async (req, res) => {
 };
 
 // Remove items from user cart
-const removeFromCart = async (req, res) => {};
+const removeFromCart = async (req, res) => {
+  try {
+    let userData = await userModel.findById(req.body.userId);
+    let cartData = await userData.cartData;
+
+    if (cartData[req.body.itemId] > 0) {
+      cartData[req.body.itemId] -= 1;
+    }
+
+    await userModel.findByIdAndUpdate(req.body.userId, { cartData });
+    res.json({ success: true, message: "Removed from cart" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error!" });
+  }
+};
 
 // Fetch user cart data
 const getCart = async (req, res) => {};
