@@ -26,7 +26,7 @@ const placeOrder = async (req, res) => {
 
     // Logic to create the payment link using the Stripe
     // => Line Items will consists of items data like name, currency etc
-    const line_items = req.body.items.map(() => ({
+    const line_items = req.body.items.map((item) => ({
       price_data: {
         currency: "inr",
         product_data: {
@@ -65,7 +65,7 @@ const placeOrder = async (req, res) => {
     // sent the session url as a response.
     res.json({
       success: true,
-      success_url: success_url,
+      session_url: session.url,
     });
   } catch (error) {
     console.log(error);
