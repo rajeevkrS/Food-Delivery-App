@@ -76,4 +76,38 @@ const placeOrder = async (req, res) => {
   }
 };
 
-export { placeOrder };
+// When payment is success/cancel then verifying the order payment
+const verifyOrder = async (req, res) => {
+  // fetching the orderId and success from req.body
+  const { orderId, success } = req.body;
+
+  try {
+    // Payment Successful
+    if (success == "true") {
+      await orderModel.findByIdAndUpdate(orderId, { payment: true });
+      res.json({ success: true, message: "Paid!" });
+    }
+    // Payment Canceled then deleting the order from DB
+    else {
+      await orderModel.findByIdAndDelete(orderId);
+      res.json({ success: false, message: "Not Paid!" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error!" });
+  }
+};
+
+// User's order API for frontend
+const userOrders = async (req, res) => {
+  try {
+    // Find all order of particular user
+    const orders = await orderModel.find({ userId: req.body.userId });
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error!" });
+  }
+};
+
+export { placeOrder, verifyOrder, userOrders };
