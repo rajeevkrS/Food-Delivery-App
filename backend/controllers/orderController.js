@@ -110,4 +110,17 @@ const userOrders = async (req, res) => {
   }
 };
 
-export { placeOrder, verifyOrder, userOrders };
+// Listing orders for admin panel
+// API to fetch all the orders details of all users.
+const listOrders = async (req, res) => {
+  try {
+    // accessing all the order's data in the orders var
+    const orders = await orderModel.find({});
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error!" });
+  }
+};
+
+export { placeOrder, verifyOrder, userOrders, listOrders };
