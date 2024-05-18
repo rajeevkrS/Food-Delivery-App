@@ -20,8 +20,6 @@ const Navbar = ({ setShowLogin }) => {
     // Then removing from the token state
     setToken("");
 
-    window.location.reload();
-
     // When user logged out, then sending user to the home page
     navigate("/");
   };

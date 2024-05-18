@@ -75,8 +75,10 @@ const PlaceOrder = () => {
   useEffect(() => {
     if (!token) {
       navigate("/");
+      alert("Login to checkout! ");
     } else if (getTotalCartAmount() === 0) {
       navigate("/");
+      alert("Cart is empty! ");
     }
   }, [token]);
 
