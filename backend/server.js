@@ -13,13 +13,13 @@ const port = 4000;
 
 //middleware
 app.use(cors());
-// app.use(
-//   cors({
-//     origin: ["https://merneats-frontend.vercel.app"],
-//     methods: ["POST", "GET"],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["https://merneats-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
