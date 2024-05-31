@@ -9,8 +9,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  // const url = "http://localhost:4000";
-  const url = "https://merneats-api.vercel.app/";
+  const url = "http://localhost:4000";
+  // const url = "https://merneats-api.vercel.app/";
 
   return (
     <div className="app">
