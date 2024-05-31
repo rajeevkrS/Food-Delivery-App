@@ -14,7 +14,7 @@ const port = 4000;
 //middlewaree
 app.use(
   cors({
-    origin: ["https://merneats-frontend.vercel.app"],
+    origin: ["https://merneats-frontend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
