@@ -12,9 +12,14 @@ const app = express();
 const port = 4000;
 
 //middlewaree
+// app.use(cors());
+
 app.use(
   cors({
-    origin: ["https://merneats-frontend.vercel.app/"],
+    origin: [
+      "https://merneats-frontend.vercel.app/",
+      "https://merneats-admin.vercel.app/",
+    ],
     methods: ["POST", "GET"],
     credentials: true,
   })
