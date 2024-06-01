@@ -17,8 +17,8 @@ const port = 4000;
 app.use(
   cors({
     origin: [
-      "https://merneats-frontend.vercel.app/",
-      "https://merneats-admin.vercel.app/",
+      "https://merneats-frontend.vercel.app",
+      "https://merneats-admin.vercel.app",
     ],
     methods: ["POST", "GET"],
     credentials: true,
