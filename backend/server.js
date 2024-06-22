@@ -12,18 +12,18 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 //middlewaree
-// app.use(cors());
+app.use(cors());
 
-app.use(
-  cors({
-    origin: [
-      "https://merneats-frontend.vercel.app",
-      "https://merneats-admin.vercel.app",
-    ],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       "https://merneats-frontend.vercel.app",
+//       "https://merneats-admin.vercel.app",
+//     ],
+//     methods: ["POST", "GET"],
+//     credentials: true,
+//   })
+// );
 
 app.use(express.json());
 
