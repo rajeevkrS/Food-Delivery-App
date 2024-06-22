@@ -10,8 +10,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const url = "http://localhost:8000";
-  // const url = "https://merneats-api.vercel.app";
+  // const url = "http://localhost:8000";
+  const url = "https://food-delivery-app-backend-enj0.onrender.com";
   // axios.defaults.baseURL = ;
 
   return (
