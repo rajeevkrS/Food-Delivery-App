@@ -9,7 +9,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const placeOrder = async (req, res) => {
   // const frontend_url = "http://localhost:5174";
   const frontend_url = process.env.FRONTEND_URL;
-  // const frontend_url = "https://merneats-0xob.onrender.com";
 
   try {
     // Creating a New Order from orderModel

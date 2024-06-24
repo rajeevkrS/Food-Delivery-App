@@ -12,7 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   // const url = "http://localhost:8000";
   const url = import.meta.env.VITE_APP_BACKEND_URL;
-  // const url = "https://merneats-backkend.onrender.com";
 
   // axios.defaults.baseURL = ;
 
