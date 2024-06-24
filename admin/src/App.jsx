@@ -8,6 +8,8 @@ import Orders from "./pages/Orders/Orders";
 // import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import dotenv from "dotenv";
+dotenv.config();
 
 const App = () => {
   const url = "http://localhost:8000";

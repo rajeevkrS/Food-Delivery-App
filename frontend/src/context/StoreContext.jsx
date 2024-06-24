@@ -1,12 +1,15 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "http://localhost:8000";
-  // const url = process.env.URL;
+  // const url = "http://localhost:8000";
+  const url = process.env.URL;
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 

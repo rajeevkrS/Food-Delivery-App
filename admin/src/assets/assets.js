@@ -5,6 +5,8 @@ import profile_image from "./profile_image.png";
 import upload_area from "./upload_area.png";
 import parcel_icon from "./parcel_icon.png";
 import all_order_items from "./all_order_items.png";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const assets = {
   logo,
@@ -16,5 +18,5 @@ export const assets = {
   all_order_items,
 };
 
-export const url = "http://localhost:8000";
-// export const url = process.env.URL;
+// export const url = "http://localhost:8000";
+export const url = process.env.URL;
