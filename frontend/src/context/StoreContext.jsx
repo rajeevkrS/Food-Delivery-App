@@ -7,7 +7,7 @@ const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
 
   // const url = "http://localhost:8000";
-  const url = process.env.VITE_APP_BACKEND_URL;
+  const url = import.meta.env.VITE_APP_BACKEND_URL;
   // const url = "https://merneats-backkend.onrender.com";
 
   const [token, setToken] = useState("");
