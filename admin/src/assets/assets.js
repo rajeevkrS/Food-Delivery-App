@@ -17,4 +17,4 @@ export const assets = {
 };
 
 // export const url = "http://localhost:8000";
-export const url = import.meta.env.REACT_APP_BACKEND_URL;
+export const url = import.meta.env.VITE_APP_BACKEND_URL;
