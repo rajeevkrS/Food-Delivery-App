@@ -17,4 +17,5 @@ export const assets = {
 };
 
 // export const url = "http://localhost:8000";
-export const url = process.env.REACT_APP_BACKEND_URL;
+// export const url = process.env.REACT_APP_BACKEND_URL;
+export const url = "https://merneats-backkend.onrender.com";
