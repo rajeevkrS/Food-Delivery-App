@@ -9,7 +9,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
   // const url = "http://localhost:8000";
-  const url = process.env.URL;
+  const url = process.env.REACT_APP_URL;
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 

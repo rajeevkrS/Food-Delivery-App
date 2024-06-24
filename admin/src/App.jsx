@@ -12,8 +12,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const App = () => {
-  const url = "http://localhost:8000";
-  // const url = process.env.URL;
+  // const url = "http://localhost:8000";
+  const url = process.env.REACT_APP_URL;
   // axios.defaults.baseURL = ;
 
   return (
