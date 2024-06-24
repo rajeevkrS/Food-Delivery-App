@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} alt="" />
+          <h1 className="logo">MernEats.com</h1>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia
             maxime, laudantium repellendus blanditiis hic maiores id eligendi
@@ -34,13 +34,13 @@ const Footer = () => {
           <h2>GET IN TOUCH</h2>
           <ul>
             <li>+1-212-456-7589</li>
-            <li>contact@tomato.com</li>
+            <li>contact@merneats.com</li>
           </ul>
         </div>
       </div>
       <hr />
       <p className="footer-copyright">
-        Copyright 2024 © Tomato.com - All Right Reserved.
+        Copyright 2024 © MernEats.com - All Right Reserved.
       </p>
     </div>
   );

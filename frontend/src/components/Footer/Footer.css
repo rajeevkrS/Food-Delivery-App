@@ -26,6 +26,10 @@
   gap: 20px;
 }
 
+.footer-content-left .logo {
+  color: tomato;
+}
+
 .footer-content-left li,
 .footer-content-right li,
 .footer-content-center li {

@@ -36,12 +36,26 @@
   max-width: max(40%, 500px);
 }
 
-.place-order .cart-total button {
-  margin-top: 20px;
+.place-order .cart-total .card-no-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.place-order .cart-total .copy-clipboard {
+  width: 100px;
 }
 
 @media (max-width: 800px) {
   .place-order {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .place-order .cart-total .card-no-container {
     flex-direction: column;
   }
 }

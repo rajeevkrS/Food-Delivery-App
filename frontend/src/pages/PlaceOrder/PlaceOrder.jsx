@@ -21,6 +21,8 @@ const PlaceOrder = () => {
     phone: "",
   });
 
+  const [copyButtonText, setCopyButtonText] = useState("Copy");
+
   // Handler to save the from data in the data state var.
   const onChangeHandler = (e) => {
     const name = e.target.name;
@@ -81,6 +83,21 @@ const PlaceOrder = () => {
       alert("Cart is empty! ");
     }
   }, [token]);
+
+  const copyToClipboard = () => {
+    const textToCopy = "4000003560000008";
+    navigator.clipboard.writeText(textToCopy).then(
+      () => {
+        setCopyButtonText("Copied");
+        setTimeout(() => {
+          setCopyButtonText("Copy");
+        }, 2000);
+      },
+      (err) => {
+        console.error("Could not copy text: ", err);
+      }
+    );
+  };
 
   return (
     <form onSubmit={handlePayment} className="place-order">
@@ -188,6 +205,19 @@ const PlaceOrder = () => {
               </b>
             </div>
           </div>
+
+          <div className="card-no-container">
+            <h2>Card No:</h2>
+            <h2>4000003560000008</h2>
+            <button
+              className="copy-clipboard"
+              type="button"
+              onClick={copyToClipboard}
+            >
+              {copyButtonText}
+            </button>
+          </div>
+
           <button type="submit">PROCEED TO PAYMENT</button>
         </div>
       </div>
