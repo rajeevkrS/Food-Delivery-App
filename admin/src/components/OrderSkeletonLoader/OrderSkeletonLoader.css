@@ -49,6 +49,7 @@
   width: 40%;
 }
 
+/* Define the keyframes for the shimmer effect */
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;

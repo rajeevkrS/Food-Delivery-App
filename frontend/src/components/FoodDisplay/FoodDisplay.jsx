@@ -10,8 +10,12 @@ const FoodDisplay = ({ category }) => {
 
   useEffect(() => {
     const loadFoodItems = async () => {
+      // Set loading to true before fetching
       setLoading(true);
+
       await fetchFoodList();
+
+      // Set loading to false before fetching
       setLoading(false);
     };
 
