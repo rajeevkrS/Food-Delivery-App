@@ -3,7 +3,7 @@ import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
-import ListSkeletonLoader from "../../components/ListSkeletonLoader/ListSkeletonLoader";
+import ListSkeletonLoader from "../../assets/ListSkeletonLoader/ListSkeletonLoader";
 
 const List = ({ url }) => {
   const [list, setList] = useState([]);
