@@ -3,7 +3,7 @@ import "./Orders.css";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { assets } from "../../assets/assets";
-import OrderSkeletonLoader from "../../assets/OrderSkeletonLoader/OrderSkeletonLoader";
+import OrderSkeletonLoader from "../../components/OrderSkeletonLoader/OrderSkeletonLoader";
 
 const Orders = ({ url }) => {
   // State variable for storing data coming from backend API
