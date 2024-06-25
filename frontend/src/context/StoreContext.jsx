@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
 export const StoreContext = createContext(null);
@@ -58,11 +58,11 @@ const StoreContextProvider = ({ children }) => {
   };
 
   // Fetching the food list from the DB.
-  const fetchFoodList = async () => {
+  const fetchFoodList = useCallback(async () => {
     const response = await axios.get(url + "/api/food/list");
 
     setFoodList(response.data.data);
-  };
+  }, [url]);
 
   // Load Cart Data fetches data from particular users data which displays the actual quantity has been added of every item.
   const loadCartData = async (token) => {
@@ -90,7 +90,7 @@ const StoreContextProvider = ({ children }) => {
       }
     }
     loadData();
-  }, []);
+  }, [fetchFoodList]);
 
   const contextValue = {
     food_list,
@@ -102,6 +102,7 @@ const StoreContextProvider = ({ children }) => {
     url,
     token,
     setToken,
+    fetchFoodList,
   };
   return (
     <StoreContext.Provider value={contextValue}>
