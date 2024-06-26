@@ -63,12 +63,12 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
    npm install
    ```
 
-3. **Set up environment variables**:
+3. **Set up environment `.env` variables**:
 
    ```dotenv
 
    # for mongo database
-   MONGODB_URL= your mongo url
+   MONGODB_URI= your mongo url
 
    # for password secret
    JWT_SECRET = your jwt secret
@@ -78,7 +78,7 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
    ```
 
 4. **Run the application**:
-   In the `backend` directory, start the server:
+   In the `admin` directory, start the React app:
    ```sh
    npm run dev
    ```
@@ -90,6 +90,30 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
    ```sh
    npm run dev
    ```
+
+## API Endpoints
+
+Here are listed all available API endpoints along with a brief description of each.
+
+- `POST /api/user/register`: creating new user
+- `POST /api/user/login`: user logged in
+- `POST /api/cart/add`: add foods from user's cart
+- `POST /api/cart/remove`: add foods from user's cart
+- `POST /api/cart/get`: fetch foods from user's cart
+
+- `POST /api/food/add`: add food's image and its detail from admin pannel
+- `GET /api/food/list`: get list of all foods in admin pannel
+- `POST /api/food/remove`: remove foods from list from admin pannel
+
+- `POST /api/order/place`: place an order
+- `POST /api/order/verify`: verifying the order payment (success/failed)
+- `POST /api/order/userorders`: all orders of particular user
+- `GET /api/order/list`: get orders of all users in admin pannel
+- `POST /api/order/status`: update status of all orders
+
+## Admin Pannel Preview
+
+![Admin-Pannel](frontend/src/assets/merneats-admin-thumbnail.png)
 
 ## 👤 Developer
 
