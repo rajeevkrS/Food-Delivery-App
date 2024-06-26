@@ -24,7 +24,7 @@ const FoodDisplay = ({ category }) => {
 
   return (
     <div className="food-display" id="food-display">
-      <h2>Top dishes near you</h2>
+      <h2>Best dishes in your vicinity</h2>
       <div className="food-display-list">
         {loading
           ? Array.from({ length: 10 }).map((_, index) => (

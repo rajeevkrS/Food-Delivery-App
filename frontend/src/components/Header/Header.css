@@ -1,9 +1,10 @@
 .header {
   height: 34vw;
   margin: 30px auto;
-  background: url("/header_img.png") no-repeat;
-  background-size: contain;
+  background: url("../../assets/header-img.png") no-repeat;
+  background-size: cover;
   position: relative;
+  border-radius: 10px;
 }
 
 .header-contents {
@@ -26,7 +27,7 @@
 
 .header-contents p {
   color: white;
-  font-size: 1vw;
+  font-size: 1.3vw;
 }
 
 .header-contents button {
@@ -39,66 +40,13 @@
   border-radius: 50px;
 }
 
-/* .about_section {
-  width: 100%;
-  float: left;
-  background-image: url("../../assets/about-img.png");
-  height: auto;
-  background-size: 100%;
-}
-
-.about_img {
-  width: 100%;
-  float: left;
-}
-
-.about_taital_main {
-  width: 100%;
-  float: left;
-  padding: 90px 0px;
-}
-
-.about_taital {
-  width: 100%;
-  float: left;
-  font-size: 40px;
-  color: #fefefd;
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-
-.about_text {
-  width: 100%;
-  float: left;
-  font-size: 16px;
-  color: #fefefd;
-  margin: 0px;
-}
-
-.readmore_bt {
-  width: 170px;
-  float: left;
-  margin-top: 30px;
-}
-
-.readmore_bt a {
-  width: 100%;
-  float: left;
-  padding: 8px 10px;
-  color: #292928;
-  background-color: #fefefd;
-  text-align: center;
-  font-size: 18px;
-}
-
-.readmore_bt a:hover {
-  color: #fefefd;
-  background-color: #292928;
-} */
-
 @media (max-width: 1050px) {
   .header-contents {
     max-width: 45%;
+  }
+
+  .header-contents p {
+    font-size: 1.2vw;
   }
 }
 

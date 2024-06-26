@@ -1,17 +1,16 @@
 import React from "react";
 import "./Header.css";
-import { assets } from "../../assets/assets";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header-contents">
-        <h2>Order your favourite food here</h2>
+        <h2>Place your favorite food order here</h2>
         <p>
-          Choose from a diverse menu featuring a deletable array of dishes
-          crafted with the finest ingredients culinary expertise. Our mission is
-          to satisfy your cravings and elevate your dining experience, one
-          delicious meal at a time.
+          Select from a diverse menu offering a delectable selection of dishes,
+          made with the finest ingredients and expert culinary skills. Our goal
+          is to satisfy your cravings and enhance your dining experience with
+          every delicious meal.
         </p>
         <button>View Menu</button>
       </div>

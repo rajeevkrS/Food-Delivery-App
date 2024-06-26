@@ -2,7 +2,7 @@ import about_bg from "./about-bg.png";
 import about_img from "./about-img.png";
 import basket_icon from "./basket_icon.png";
 import logo from "./logo.png";
-import header_img from "./header_img.png";
+import header_img from "./header-img.png";
 import search_icon from "./search_icon.png";
 import menu_1 from "./menu_1.png";
 import menu_2 from "./menu_2.png";
@@ -12,6 +12,7 @@ import menu_5 from "./menu_5.png";
 import menu_6 from "./menu_6.png";
 import menu_7 from "./menu_7.png";
 import menu_8 from "./menu_8.png";
+import menu_9 from "./menu_9.jpg";
 
 import food_1 from "./food_1.png";
 import food_2 from "./food_2.png";
@@ -45,6 +46,10 @@ import food_29 from "./food_29.png";
 import food_30 from "./food_30.png";
 import food_31 from "./food_31.png";
 import food_32 from "./food_32.png";
+import food_33 from "./food_33.jpg";
+import food_34 from "./food_34.jpg";
+import food_35 from "./food_35.jpg";
+import food_36 from "./food_36.jpg";
 
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
@@ -118,6 +123,10 @@ export const menu_list = [
   {
     menu_name: "Noodles",
     menu_image: menu_8,
+  },
+  {
+    menu_name: "Non Veg",
+    menu_image: menu_9,
   },
 ];
 
@@ -409,5 +418,41 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
+  },
+  {
+    _id: "33",
+    name: "Handi Chicken",
+    image: food_33,
+    price: 30,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Non Veg",
+  },
+  {
+    _id: "34",
+    name: "Butter Chicken",
+    image: food_34,
+    price: 25,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Non Veg",
+  },
+  {
+    _id: "34",
+    name: "Chilli Chicken",
+    image: food_35,
+    price: 24,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Non Veg",
+  },
+  {
+    _id: "34",
+    name: "Chicken Biryani",
+    image: food_36,
+    price: 20,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Non Veg",
   },
 ];
