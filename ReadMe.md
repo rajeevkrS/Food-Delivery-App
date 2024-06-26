@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>MernEats.com</h1>
+    <h1 style="color: tomato;">MernEats.com</h1>
 
 This application is deployed on Render. Please check it out [here](https://merneats-0xob.onrender.com).
 
@@ -50,7 +50,7 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
    cd food-delivery-app
    ```
 
-2. **Install dependencies for both backend and frontend**:
+2. **Install dependencies in admin, backend and frontend**:
 
    ```sh
    cd admin
@@ -98,7 +98,7 @@ Here are listed all available API endpoints along with a brief description of ea
 - `POST /api/user/register`: creating new user
 - `POST /api/user/login`: user logged in
 - `POST /api/cart/add`: add foods from user's cart
-- `POST /api/cart/remove`: add foods from user's cart
+- `POST /api/cart/remove`: remove foods from user's cart
 - `POST /api/cart/get`: fetch foods from user's cart
 
 - `POST /api/food/add`: add food's image and its detail from admin pannel
