@@ -46,10 +46,10 @@ import food_29 from "./food_29.png";
 import food_30 from "./food_30.png";
 import food_31 from "./food_31.png";
 import food_32 from "./food_32.png";
-import food_33 from "./food_33.jpg";
-import food_34 from "./food_34.jpg";
-import food_35 from "./food_35.jpg";
-import food_36 from "./food_36.jpg";
+import food_33 from "./food_33.png";
+import food_34 from "./food_34.png";
+import food_35 from "./food_35.png";
+import food_36 from "./food_36.png";
 
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
@@ -421,9 +421,9 @@ export const food_list = [
   },
   {
     _id: "33",
-    name: "Handi Chicken",
+    name: "Fried Chicken",
     image: food_33,
-    price: 30,
+    price: 20,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Non Veg",
@@ -450,7 +450,7 @@ export const food_list = [
     _id: "36",
     name: "Chicken Biryani",
     image: food_36,
-    price: 20,
+    price: 18,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Non Veg",
