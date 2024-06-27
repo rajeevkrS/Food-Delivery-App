@@ -438,7 +438,7 @@ export const food_list = [
     category: "Non Veg",
   },
   {
-    _id: "34",
+    _id: "35",
     name: "Chilli Chicken",
     image: food_35,
     price: 24,
@@ -447,7 +447,7 @@ export const food_list = [
     category: "Non Veg",
   },
   {
-    _id: "34",
+    _id: "36",
     name: "Chicken Biryani",
     image: food_36,
     price: 20,
