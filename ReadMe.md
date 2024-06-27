@@ -84,7 +84,7 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
    ```
    In the `backend` directory, start the server:
    ```sh
-   npm run dev
+   npm run server
    ```
    In the `frontend` directory, start the React app:
    ```sh
