@@ -6,7 +6,6 @@ import userRouter from "./routes/userRoute.js";
 import "dotenv/config";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-import job from "./cron/cron.js";
 
 //app config
 const app = express();
@@ -18,9 +17,6 @@ app.use(express.json());
 
 //DB connection
 connectDB();
-
-//cron
-job.start();
 
 // API endpoints
 app.use("/api/food", foodRouter);

@@ -18,9 +18,14 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
 ![React](https://img.shields.io/badge/react_js-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)&nbsp;
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)&nbsp;
 ![Static Badge](https://img.shields.io/badge/Redux-%23764ABC?style=for-the-badge&logo=redux)&nbsp;
+![Static Badge](https://img.shields.io/badge/Context_API-%23764ABC?style=for-the-badge)&nbsp;
 
-**Database:**
+**Backend:**
 
+![Static Badge](https://img.shields.io/badge/Node_JS-%235FA04E?style=for-the-badge&logo=nodedotjs&logoColor=black)
+&nbsp;
+![Static Badge](https://img.shields.io/badge/Express_JS-%23000000?style=for-the-badge&logo=express&logoColor=white)
+&nbsp;
 ![MongoDB](https://img.shields.io/badge/MongoDB-%2347A248?style=for-the-badge&logo=mongodb&logoColor=black)&nbsp;
 
 **Payment Getway:**
