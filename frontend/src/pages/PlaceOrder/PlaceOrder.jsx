@@ -85,7 +85,7 @@ const PlaceOrder = () => {
   }, [token]);
 
   const copyToClipboard = () => {
-    const textToCopy = "4000003560000008";
+    const textToCopy = "4242 4242 4242 4242";
     navigator.clipboard.writeText(textToCopy).then(
       () => {
         setCopyButtonText("Copied");
@@ -208,7 +208,7 @@ const PlaceOrder = () => {
 
           <div className="card-no-container">
             <h2>Card No:</h2>
-            <h2>4000003560000008</h2>
+            <h2>4242 4242 4242 4242</h2>
             <button
               className="copy-clipboard"
               type="button"

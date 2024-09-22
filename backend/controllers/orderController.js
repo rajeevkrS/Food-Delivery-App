@@ -24,16 +24,19 @@ const placeOrder = async (req, res) => {
     // When order gets placed then clearing the user's cart.
     await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
+    // Set currency dynamically or use a default value (e.g., 'usd' for universal use)
+    const currency = req.body.currency || "usd";
+
     // Logic to create the payment link using the Stripe
     // => Line Items will consists of items data like name, currency etc
     const line_items = req.body.items.map((item) => ({
       price_data: {
-        currency: "inr",
+        currency: currency,
         product_data: {
           name: item.name,
         },
-        // converting amount from $ to ₹.
-        unit_amount: item.price * 100 * 80,
+        // converting amount into $
+        unit_amount: item.price * 100,
       },
       quantity: item.quantity,
     }));
@@ -41,11 +44,12 @@ const placeOrder = async (req, res) => {
     // Pushing the delivey charges in the Line Items
     line_items.push({
       price_data: {
-        currency: "inr",
+        currency: currency,
         product_data: {
           name: "Delivery Charges",
         },
-        unit_amount: 2 * 100 * 80,
+        // $2 for delivery charge
+        unit_amount: 200,
       },
       quantity: 1,
     });

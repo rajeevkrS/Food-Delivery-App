@@ -4,6 +4,7 @@
   justify-content: space-between;
   gap: 50px;
   margin-top: 100px;
+  padding: 20px;
 }
 
 .place-order-left {
@@ -14,16 +15,18 @@
 .place-order-left .title {
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .place-order-left input {
   margin-bottom: 15px;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #c5c5c5;
   border-radius: 4px;
   outline-color: tomato;
+  font-size: 16px;
 }
 
 .place-order-left .multi-fields {
@@ -36,16 +39,56 @@
   max-width: max(40%, 500px);
 }
 
-.place-order .cart-total .card-no-container {
+.cart-total {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.cart-total .card-no-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
-  padding: 5px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
-.place-order .cart-total .copy-clipboard {
-  width: 100px;
+.cart-total .card-no-container h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #444;
+}
+
+.cart-total .copy-clipboard {
+  padding: 8px 12px;
+  border: none;
+  background-color: tomato;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-total .copy-clipboard:hover {
+  background-color: darkred;
 }
 
 @media (max-width: 800px) {
@@ -57,5 +100,12 @@
 @media (max-width: 600px) {
   .place-order .cart-total .card-no-container {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-total .copy-clipboard {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
 }
