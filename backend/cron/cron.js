@@ -6,7 +6,7 @@ dotenv.config();
 
 const URL = process.env.BACKEND_URL;
 
-const job = new cron.CronJob("0 * * * *", function () {
+const job = new cron.CronJob("*/14 * * * *", function () {
   const protocol = URL.startsWith("https") ? https : http; // Choose the protocol
   protocol
     .get(URL, (res) => {
