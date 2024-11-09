@@ -7,7 +7,7 @@ dotenv.config();
 const URL = process.env.BACKEND_URL;
 
 //
-const job = new cron.CronJob("0 * * * *", function () {
+const job = new cron.CronJob("0,30 * * * *", function () {
   const protocol = URL.startsWith("https") ? https : http; // Choose the protocol
   protocol
     .get(URL, (res) => {
@@ -34,8 +34,9 @@ export default job;
 //! MINUTE, HOUR, DAY OF THE MONTH, MONTH, DAY OF THE WEEK
 
 //? EXAMPLES && EXPLANATION:
-//* 14 * * * * - Every 14 minutes
-//* 0 0 * * 0 - At midnight on every Sunday
-//* 30 3 15 * * - At 3:30 AM, on the 15th of every month
-//* 0 0 1 1 * - At midnight, on January 1st
-//* 0 * * * * - Every hour
+// */14 * * * * - Every 14 minutes
+// 0 0 * * 0 - At midnight on every Sunday
+// 30 3 15 * * - At 3:30 AM, on the 15th of every month
+// 0 0 1 1 * - At midnight, on January 1st
+// 0 * * * * - Every hour
+// 0,30 * * * * - Every half an hour
