@@ -22,6 +22,10 @@ const foodSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cloudinary_id: {
+    type: String,
+    required: true,
+  },
 });
 
 // Create the Model

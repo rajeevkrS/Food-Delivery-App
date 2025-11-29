@@ -7,6 +7,7 @@ import "dotenv/config";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 import job from "./cron/cron.js";
+import connectCloudinary from "./config/cloudinary.js";
 
 //app config
 const app = express();
@@ -18,6 +19,8 @@ app.use(express.json());
 
 //DB connection
 connectDB();
+
+connectCloudinary();
 
 //cron
 job.start();

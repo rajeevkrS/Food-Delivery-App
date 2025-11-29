@@ -4,8 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart, url } =
-    useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   return (
     <div className="food-item">
@@ -13,7 +12,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
         <img
           className="food-item-image"
           // fetching images from backend db
-          src={url + "/images/" + image}
+          src={image}
           alt=""
         />
         {!cartItems[id] ? (

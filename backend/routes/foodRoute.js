@@ -4,20 +4,21 @@ import {
   listFood,
   removeFood,
 } from "../controllers/foodController.js";
-import multer from "multer";
+// import multer from "multer";
+import upload from "../middleware/multer.js";
 
 // Create Express Router
 const foodRouter = express.Router();
 
-// Image Stroage Engine using the multer diskStorage method
-const storage = multer.diskStorage({
-  destination: "uploads",
-  filename: (req, file, callback) => {
-    return callback(null, `${Date.now()}${file.originalname}`);
-  },
-});
+// // Image Stroage Engine using the multer diskStorage method
+// const storage = multer.diskStorage({
+//   destination: "uploads",
+//   filename: (req, file, callback) => {
+//     return callback(null, `${Date.now()}${file.originalname}`);
+//   },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
 // Routes:
 foodRouter.post("/add", upload.single("image"), addFood);
