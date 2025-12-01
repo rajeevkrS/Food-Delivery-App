@@ -1,7 +1,7 @@
 <div align="center">
     <h1 style="color: tomato;">MernEats.com</h1>
 
-This application is deployed on Render. Please check it out [here](https://merneats-0xob.onrender.com).
+This application is deployed on Render. Please check it out [here](https://mern-eats.vercel.app).
 
 ![MernEats](frontend/src/assets/merneats-thumbnail.png)
 
@@ -128,7 +128,7 @@ Here are listed all available API endpoints along with a brief description of ea
 
 If you want to contact me, you can reach me through below handles.
 
-<a href="https://www.linkedin.com/in/rajeev-kumar-sudhansu/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="https://www.linkedin.com/in/rajeev-kumar-sudhansu-b52027326/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 
 <a href="mailto:rajeevkumarr1221@gmail.com"><img  alt="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 
