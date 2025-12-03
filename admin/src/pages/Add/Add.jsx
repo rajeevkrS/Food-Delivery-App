@@ -6,6 +6,9 @@ import { toast } from "react-toastify";
 
 const Add = ({ url }) => {
   const [image, setImage] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [previewLoading, setPreviewLoading] = useState(true);
+
   const [data, setData] = useState({
     name: "",
     description: "",
@@ -23,6 +26,7 @@ const Add = ({ url }) => {
   // API call- inserting all form data into one form data
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("name", data.name);
@@ -32,19 +36,25 @@ const Add = ({ url }) => {
     formData.append("image", image);
 
     //upload the product
-    const response = await axios.post(`${url}/api/food/add`, formData);
+    try {
+      const response = await axios.post(`${url}/api/food/add`, formData);
 
-    if (response.data.success) {
-      setData({
-        name: "",
-        description: "",
-        price: "",
-        category: "Salad",
-      });
-      setImage(false);
-      toast.success(response.data.message);
-    } else {
-      toast.error(response.data.message);
+      if (response.data.success) {
+        setData({
+          name: "",
+          description: "",
+          price: "",
+          category: "",
+        });
+        setImage(false);
+        toast.success(response.data.message);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      toast.error("Something went wrong!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,9 +64,16 @@ const Add = ({ url }) => {
         <div className="add-img-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
+            {/* Text shown until image loads */}
+            {previewLoading && (
+              <p className="preview-loading-text">Loading...</p>
+            )}
+
             <img
               src={image ? URL.createObjectURL(image) : assets.upload_area}
               alt=""
+              onLoad={() => setPreviewLoading(false)}
+              style={{ display: previewLoading ? "none" : "block" }}
             />
           </label>
           <input
@@ -119,8 +136,8 @@ const Add = ({ url }) => {
           </div>
         </div>
 
-        <button type="submit" className="add-btn">
-          ADD
+        <button type="submit" className="add-btn" disabled={loading}>
+          {loading ? "Adding..." : "ADD"}
         </button>
       </form>
     </div>

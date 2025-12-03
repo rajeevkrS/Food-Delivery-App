@@ -1,31 +1,43 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
-
   const navigate = useNavigate();
 
-  // Logout function
+  // Sticky Nav Ref
+  const navRef = useRef(null);
+
+  // Sticky Navbar Handler
+  const handleStickyNavbar = () => {
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      navRef.current.classList.add("sticky_nav");
+    } else {
+      navRef.current.classList.remove("sticky_nav");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyNavbar);
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
+  }, []);
+
+  // Logout
   const logout = () => {
-    // First remove the token from local storage
     localStorage.removeItem("token");
-
-    // Then removing from the token state
     setToken("");
-
-    // When user logged out, then sending user to the home page
     navigate("/");
   };
 
   return (
-    <div className="navbar">
+    <div className="navbar" ref={navRef}>
       <Link to={"/"} className="logo">
         MernEats.com
       </Link>
@@ -38,6 +50,7 @@ const Navbar = ({ setShowLogin }) => {
         >
           home
         </Link>
+
         <a
           href="#explore-menu"
           onClick={() => setMenu("menu")}
@@ -45,6 +58,7 @@ const Navbar = ({ setShowLogin }) => {
         >
           menu
         </a>
+
         <a
           href="#app-download"
           onClick={() => setMenu("mobile-app")}
@@ -52,6 +66,7 @@ const Navbar = ({ setShowLogin }) => {
         >
           mobile-app
         </a>
+
         <a
           href="#footer"
           onClick={() => setMenu("contact us")}
@@ -69,7 +84,6 @@ const Navbar = ({ setShowLogin }) => {
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
 
-        {/* If user logged-in then showing profile and logout options */}
         {!token ? (
           <button onClick={() => setShowLogin(true)}>login</button>
         ) : (

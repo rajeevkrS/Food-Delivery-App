@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,20 @@ const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
 
+  const [removingId, setRemovingId] = useState(null);
+
   const navigate = useNavigate();
+
+  // Function to handle remove with waiting state
+  const handleRemove = async (id) => {
+    if (removingId) return; // prevent multi-spam
+
+    setRemovingId(id);
+
+    await removeFromCart(id); // waits DB update if logged in
+
+    setRemovingId(null);
+  };
 
   return (
     <div className="cart">
@@ -38,10 +51,16 @@ const Cart = () => {
                     <p>{cartItems[item._id]}</p> {/*Quantity*/}
                     <p>${item.price * cartItems[item._id]}</p> {/*Total*/}
                     <p
-                      onClick={() => removeFromCart(item._id)}
-                      className="cross"
+                      className="cross remove-btn"
+                      onClick={() =>
+                        removingId ? null : handleRemove(item._id)
+                      }
                     >
-                      x
+                      {removingId === item._id ? (
+                        <span className="spinner"></span>
+                      ) : (
+                        "x"
+                      )}
                     </p>
                   </div>
                   <hr />

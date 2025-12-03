@@ -16,6 +16,55 @@
   width: 50px;
 }
 
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #aaa;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remove-btn:disabled,
+.remove-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pagination {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid tomato;
+  background-color: #ffe8e4;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 @media (max-width: 600px) {
   .list-table-format {
     grid-template-columns: 5fr 5fr 1fr 0.5fr 0.1fr;

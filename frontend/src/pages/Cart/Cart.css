@@ -30,6 +30,35 @@
   cursor: pointer;
 }
 
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #aaa;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.remove-btn:disabled,
+.remove-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .cart-bottom {
   margin-top: 80px;
   display: flex;

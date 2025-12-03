@@ -1,7 +1,7 @@
 <div align="center">
     <h1 style="color: tomato;">MernEats.com</h1>
 
-This application is deployed on Render. Please check it out [here](https://mern-eats.vercel.app).
+This application is deployed on Vercel. Please check it out [here](https://mern-eats.vercel.app).
 
 ![MernEats](frontend/src/assets/merneats-thumbnail.png)
 
@@ -34,7 +34,8 @@ Mern-Eats.com is a full-stack web application that enables users to browse throu
 
 **Deployed On:**
 
-![Render](https://img.shields.io/badge/Render-%23000000?style=for-the-badge&logo=render)&nbsp;
+![Static Badge](https://img.shields.io/badge/vercel-%23000000?style=for-the-badge&logo=vercel&logoColor=white)
+&nbsp;
 
 ## Features
 

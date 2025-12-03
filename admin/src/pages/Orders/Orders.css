@@ -1,13 +1,17 @@
 .order-item {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+  grid-template-columns:
+    minmax(0, 0.5fr) minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr)
+    minmax(0, 1fr);
   align-items: start;
-  gap: 30px;
+  gap: 15px;
   border: 1px solid tomato;
   padding: 20px;
   margin: 30px 0;
-  font-style: 14px;
+  font-size: 14px;
   color: #505050;
+  overflow-x: hidden;
+  word-break: break-word;
 }
 
 .order-item-food,
@@ -27,21 +31,52 @@
 .order-item select {
   background-color: #ffe8e4;
   border: 1px solid tomato;
-  width: max(10vw, 120px);
+  width: 120px;
   padding: 10px;
   outline: none;
 }
 
+.changing-text {
+  font-weight: 500;
+  color: black;
+  font-size: 14px;
+}
+
+.loading-orders {
+  text-align: center;
+  padding: 10px;
+}
+
+.pagination {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid tomato;
+  background-color: #ffe8e4;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 @media (max-width: 1000px) {
   .order-item {
-    font-style: 12px;
-    grid-template-columns: 0.5fr 2fr 1fr;
+    font-size: 12px;
+    grid-template-columns: minmax(0, 0.5fr) minmax(0, 2fr) minmax(0, 1fr);
     padding: 15px 8px;
   }
 
   .order-item select {
     padding: 5px;
-    font-style: 12px;
+    font-size: 12px;
   }
 
   .order-item img {
